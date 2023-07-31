@@ -1,0 +1,24 @@
+run:
+  tests: true
+
+linters:
+  disable-all: true
+  enable:
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - bodyclose
+    - gocyclo
+    - errorlint
+    - misspell
+    - nestif
+    - unconvert
+    - unparam
+    - exportloopref
+    - gochecknoinits
+    - gofmt
+    - errcheck
+    - godox
+    - prealloc

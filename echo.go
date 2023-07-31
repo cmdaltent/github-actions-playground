@@ -6,8 +6,8 @@ import (
 )
 
 func handler(response http.ResponseWriter, request *http.Request) {
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
+	defer func(body io.ReadCloser) {
+		err := body.Close()
 		if err != nil {
 			response.WriteHeader(http.StatusInternalServerError)
 			return
