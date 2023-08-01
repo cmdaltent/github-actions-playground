@@ -25,6 +25,9 @@ jobs:
     name: run unit tests
     runs-on: ubuntu-latest
 
+    needs:
+      - revive
+
     steps:
       - name: check out sources
         uses: actions/checkout@v3
