@@ -1,0 +1,29 @@
+name: Example Workflow
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  test:
+    name: run unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check out sources
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-go@v4
+        with:
+          go-version: ^1.20
+
+      - name: fetch depencies
+        run: go mod download
+
+      - name: run tests
+        run: go test -v ./...
