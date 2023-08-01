@@ -25,6 +25,9 @@ jobs:
     name: Lint Golang sources
     runs-on: ubuntu-latest
 
+    needs:
+      - revive
+
     steps:
       - uses: actions/checkout@v3
 
@@ -43,7 +46,6 @@ jobs:
     runs-on: ubuntu-latest
 
     needs:
-      - revive
       - golangci
 
     steps:
