@@ -1,0 +1,22 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'info'
+        options:
+          - 'debug'
+          - 'info'
+          - 'warn'
+          - 'error'
+
+jobs:
+
+  printInput:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input
+        run: echo "The log level is ${{ inputs.logLevel }}"
